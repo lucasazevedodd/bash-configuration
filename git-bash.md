@@ -1,3 +1,6 @@
+### Insert this code at the end of your .bashrc file
+
+```
 function _git_prompt() {
     local git_status="`git status -unormal 2>&1`"
     if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
@@ -23,3 +26,5 @@ function _prompt_command() {
     PS1="\[\033[01;32m\]\u:\[\033[01;36m\]\W\[\033[31m\] \[\033[m\]`_git_prompt`\n$ "
 }
 PROMPT_COMMAND=_prompt_command
+
+```

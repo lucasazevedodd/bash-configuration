@@ -37,6 +37,10 @@ module.exports = {
         0%{opacity: 0;}
         100%{ opacity: 1;}
       }
+      @keyframes rotate{
+        0%{transform: rotate(0deg);}
+        100%{transform: rotate(350deg);}
+      }
       html > * .cursor-node[focus=false],
       html > * .cursor-node{
         display: inline-block;
@@ -51,6 +55,13 @@ module.exports = {
         box-sizing: content-box;
       }
 
+      html > * .cursor-node[focus=false]{
+        animation: rotate 1s infinite linear;
+        box-shadow: none;
+        border-color: gray !important;
+        border-top-color: transparent!important;
+      }
+
       .cursor-node:before{
         content: '';
         border-radius: 50%;
@@ -60,6 +71,11 @@ module.exports = {
         background: #0df;
         top: 2px;
         left: 2px;
+      }
+
+      html > * .cursor-node[focus=false]:before{
+        background: gray;
+        opacity: 0.8;
       }
     `,
 

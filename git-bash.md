@@ -10,7 +10,6 @@ function _git_prompt() {
         fi
         if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
             branch=${BASH_REMATCH[1]}
-            test "$branch" != master || branch=' '
         else
             # Detached HEAD.  (branch=HEAD is a faster alternative.)
             branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
@@ -21,6 +20,6 @@ function _git_prompt() {
 }
 
 function _prompt_command() {
-    PS1="\[\033[01;32m\]\u:\[\033[01;36m\]\W\[\033[31m\] \[\033[m\]`_git_prompt`$ "
+    PS1="\[\033[01;32m\]\u:\[\033[01;36m\]\W\[\033[31m\] \[\033[m\]`_git_prompt`\n$ "
 }
 PROMPT_COMMAND=_prompt_command

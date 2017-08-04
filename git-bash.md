@@ -23,7 +23,7 @@ function _git_prompt() {
 }
 
 function _prompt_command() {
-    PS1="\[\033[01;32m\]\u:\[\033[01;36m\]\W\[\033[31m\] \[\033[m\]`_git_prompt`\n$ "
+    PS1="\[\033[01;32m\]\u:\[\033[01;36m\]\w\[\033[31m\] \[\033[m\]`_git_prompt`\n$ "
 }
 PROMPT_COMMAND=_prompt_command
 

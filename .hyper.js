@@ -38,11 +38,11 @@ module.exports = {
         100%{ opacity: 1;}
       }
       @keyframes rotate{
-        0%{transform: rotate(0deg);}
+        0%{transform: rotate(0deg);}	
         100%{transform: rotate(350deg);}
       }
-      html > * .cursor-node[focus=false],
-      html > * .cursor-node{
+      html > * .terminal:not(.focus) .terminal-cursor,
+      html > * .terminal-cursor{
         display: inline-block;
         width: 12px !important;
         height: 12px !important;
@@ -54,15 +54,13 @@ module.exports = {
         animation: anim .8s infinite alternate linear;
         box-sizing: content-box;
       }
-
-      html > * .cursor-node[focus=false]{
+      html > * .terminal:not(.focus) .terminal-cursor{
         animation: rotate 1s infinite linear;
-        box-shadow: none;
+        box-shadow: none !important;
         border-color: gray !important;
         border-top-color: transparent!important;
       }
-
-      .cursor-node:before{
+      html > * .terminal-cursor:before{
         content: '';
         border-radius: 50%;
         position: absolute;
@@ -72,8 +70,7 @@ module.exports = {
         top: 2px;
         left: 2px;
       }
-
-      html > * .cursor-node[focus=false]:before{
+      html > * .terminal:not(.focus) .terminal-cursor:before{
         background: gray;
         opacity: 0.8;
       }
@@ -150,7 +147,7 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    //'hyperpower'
+    'hyperpower'
   ],
 
   // in development, you can create a directory under
